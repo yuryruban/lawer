@@ -6,7 +6,7 @@ burger.addEventListener('click', function () {
 	document.querySelector('.nav').classList.toggle('nav_disactive');
 });
 
-//Переключение
+//Переключение!1
 
 let serv = document.querySelectorAll('.services__menu-item');
 
@@ -50,23 +50,26 @@ price.forEach((el1) => {
 //Слайдер
 
 function newSlideLeft() {
-	let slider__text_active = document.querySelector('.slider__text_active');
+	let slider__text_active = document.querySelector('.slider__text_active'),
+		sliderAll = document.querySelectorAll('.slider__text');
 	let sliderImg = document.querySelector('.slider');	
 	let num = slider__text_active.getAttribute('name');
 	if (num == 1) {
-		sliderImg.classList.remove('slider_slider1');
-		sliderImg.classList.remove('slider_slider2');
-		sliderImg.classList.remove('slider_slider3');
-		sliderImg.classList.remove('slider_slider4');
+		let numb = 0;
+		while(numb<sliderAll.length){
+			numb+=1;
+			sliderImg.classList.remove('slider_slider'+numb);
+		}
 		slider__text_active.classList.remove('slider__text_active');
 		document.querySelector('.slider__text__4').classList.add('slider__text_active');
 		sliderImg.classList.add('slider_slider4');
 	}
 	else {
-		sliderImg.classList.remove('slider_slider1');
-		sliderImg.classList.remove('slider_slider2');
-		sliderImg.classList.remove('slider_slider3');
-		sliderImg.classList.remove('slider_slider4');
+		let numb = 0;
+		while(numb<sliderAll.length){
+			numb+=1;
+			sliderImg.classList.remove('slider_slider'+numb);
+		}
 		slider__text_active.classList.remove('slider__text_active');
 		num = num - 1;
 		document.querySelector('.slider__text__' + num).classList.add('slider__text_active');
@@ -75,24 +78,27 @@ function newSlideLeft() {
 };
 
 function newSlideRight() {
-	let slider__text_active = document.querySelector('.slider__text_active');
+	const slider__text_active = document.querySelector('.slider__text_active'),
+		sliderAll = document.querySelectorAll('.slider__text');
 	let num = slider__text_active.getAttribute('name');
-	let sliderImg = document.querySelector('.slider');	
+	let sliderImg = document.querySelector('.slider');
 
-	if (num == 4) {
-		sliderImg.classList.remove('slider_slider1');
-		sliderImg.classList.remove('slider_slider2');
-		sliderImg.classList.remove('slider_slider3');
-		sliderImg.classList.remove('slider_slider4');
+	if (num == sliderAll.length) {
+		let numb = 0;
+		while(numb<sliderAll.length){
+			numb+=1;
+			sliderImg.classList.remove('slider_slider'+numb);
+		}
 		slider__text_active.classList.remove('slider__text_active');
 		document.querySelector('.slider__text__1').classList.add('slider__text_active');
 		sliderImg.classList.add('slider_slider1');
 	}
 	else {
-		sliderImg.classList.remove('slider_slider1');
-		sliderImg.classList.remove('slider_slider2');
-		sliderImg.classList.remove('slider_slider3');
-		sliderImg.classList.remove('slider_slider4');
+		let numb = 0;
+		while(numb<sliderAll.length){
+			numb+=1;
+			sliderImg.classList.remove('slider_slider'+numb);
+		}
 		slider__text_active.classList.remove('slider__text_active');
 		num = num * 1 + 1;
 		document.querySelector('.slider__text__' + num).classList.add('slider__text_active');
