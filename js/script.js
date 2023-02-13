@@ -61,8 +61,8 @@ function newSlideLeft() {
 			sliderImg.classList.remove('slider_slider'+numb);
 		}
 		slider__text_active.classList.remove('slider__text_active');
-		document.querySelector('.slider__text__4').classList.add('slider__text_active');
-		sliderImg.classList.add('slider_slider4');
+		document.querySelector('.slider__text__'+numb).classList.add('slider__text_active');
+		sliderImg.classList.add('slider_slider'+numb);
 	}
 	else {
 		let numb = 0;
